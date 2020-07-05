@@ -1,0 +1,76 @@
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main .title {
+  background-color: #e35353;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  color: white;
+  font-size: 2em;
+  font-family: "Roboto", sans-serif;
+}
+
+.main .pizza {
+  position: relative;
+}
+
+.main .pizza .circle-container img {
+  display: block;
+  width: 100%;
+}
+
+.main .pizza .slice {
+  width: 100px !important;
+}
+
+.main .deg-0 {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.main .deg-45 {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.main .deg-90 {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.main .deg-135 {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+.main .deg-180 {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.main .deg-225 {
+  -webkit-transform: rotate(225deg);
+          transform: rotate(225deg);
+}
+
+.main .deg-270 {
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+
+.main .deg-315 {
+  -webkit-transform: rotate(315deg);
+          transform: rotate(315deg);
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,33 @@
+#header {
+  background-color: transparent;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .header-title {
+    font-family: "Yellowtail", cursive;
+    text-decoration: none;
+    color: rgb(227, 83, 83);
+    font-size: 2em;
+    margin: 0;
+    padding: 0;
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+}
+
+.header-vid {
+  padding: 0px !important;
+  margin: 0 !important;
+  height: 400px;
+
+  video {
+    height: inherit;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}

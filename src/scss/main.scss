@@ -1,0 +1,35 @@
+$degrees: 0, 45, 90, 135, 180, 225, 270, 315;
+
+.main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  .title {
+    background-color: #e35353;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-size: 2em;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .pizza {
+    position: relative;
+
+    .circle-container img {
+      display: block;
+      width: 100%;
+    }
+
+    .slice {
+      width: 100px !important;
+    }
+  }
+
+  @each $deg in $degrees {
+    .deg-#{$deg} {
+      transform: rotate($deg + deg);
+    }
+  }
+}
