@@ -1,34 +1,43 @@
 import React, { Component } from "react";
 import "../css/main.css";
-import Slice from "../images/pizzaSlice.png";
+import pizza1 from "../images/pizza1.png";
+import pizzavid from "../videos/pizzaVid.mp4";
 class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
       pizza: [
-        { src: Slice, id: 1, className: "deg-0" },
-        { src: Slice, id: 2, className: "deg-45" },
-        { src: Slice, id: 3, className: "deg-90" },
-        { src: Slice, id: 4, className: "deg-135" },
-        { src: Slice, id: 5, className: "deg-180" },
-        { src: Slice, id: 6, className: "deg-225" },
-        { src: Slice, id: 7, className: "deg-270" },
-        { src: Slice, id: 8, className: "deg-315" },
+        {
+          id: 1,
+          name: "margarita",
+          price: "15$",
+          src: pizza1,
+          className: "main-pizza",
+        },
       ],
     };
   }
+
   render() {
-    let { pizza } = this.state;
+    const { pizza } = this.state;
+
     return (
       <div className="container-fluid p-0 main">
-        <div className="pizza ">
-          {pizza.map((slice) => {
+        <div className="container-fluid p-0">
+          <video className="pizza-video" loop autoPlay src={pizzavid}></video>
+        </div>
+
+        <div className="container pizza-header">
+          <p>Order one of our amazing pizza's Today!</p>
+        </div>
+        <div className="pizza mx-auto">
+          {pizza.map((pizza) => {
             return (
               <img
-                className={slice.className + " slice "}
-                key={slice.id}
-                src={slice.src}
-                alt=""
+                key={pizza.id}
+                src={pizza.src}
+                className={pizza.className}
+                alt="pizza"
               />
             );
           })}

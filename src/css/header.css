@@ -7,6 +7,9 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: absolute;
+  top: 0;
+  z-index: 1;
 }
 
 #header .header-title {
@@ -21,18 +24,5 @@
 #header .header-title a {
   text-decoration: none;
   color: black;
-}
-
-.header-vid {
-  padding: 0px !important;
-  margin: 0 !important;
-  height: 400px;
-}
-
-.header-vid video {
-  height: inherit;
-  width: 100%;
-  margin: 0;
-  padding: 0;
 }
 /*# sourceMappingURL=header.css.map */
