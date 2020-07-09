@@ -15,8 +15,8 @@
           align-items: center;
   -webkit-animation: overlayVisbilty;
           animation: overlayVisbilty;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: 1;
           animation-iteration-count: 1;
   -webkit-animation-fill-mode: forwards;
@@ -24,7 +24,7 @@
 }
 
 .overlay img {
-  width: 25%;
+  width: 15%;
   -webkit-animation: spin 1s linear;
           animation: spin 1s linear;
   -webkit-animation-iteration-count: infinite;
