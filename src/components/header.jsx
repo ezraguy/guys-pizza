@@ -5,9 +5,7 @@ const Header = () => {
     <div className="container-fluid m-0 p-0">
       <nav id="header" className="navbar navbar-default  ">
         <div className=" mx-auto order-0">
-          <a href="#poyPizza" className="navbar-brand mx-auto header-title">
-            Poy's Pizza
-          </a>
+          <p className="navbar-brand mx-auto header-title">Poy's Pizza</p>
         </div>
       </nav>
     </div>

@@ -24,7 +24,13 @@ class Main extends Component {
     return (
       <div className="container-fluid p-0 main">
         <div className="container-fluid p-0">
-          <video className="pizza-video" loop autoPlay src={pizzavid}></video>
+          <video
+            autoPlay
+            muted
+            className="pizza-video"
+            loop
+            src={pizzavid}
+          ></video>
         </div>
 
         <div className="container pizza-header">
