@@ -26,57 +26,57 @@
   height: 400px;
 }
 
-.main .pizza {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
+.main .pizzas .card {
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 5px;
+          box-shadow: 0 0 5px;
+  text-align: center;
 }
 
-.main .pizza .main-pizza {
+.main .pizzas .card img {
+  padding-top: 10px;
+  height: 250px;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.main .pizzas .card img:hover {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+}
+
+.main .pizzas .main-pizza {
   border: none;
-  width: 40%;
-  -webkit-animation: roll-in 1s ease;
-          animation: roll-in 1s ease;
+  height: 300px;
+}
+
+.main .pizzas .addToCart {
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.main .pizzas .addToCart:hover {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+.main .pizzas .addToCart:hover .cart {
+  -webkit-transform: rotateZ(30deg);
+          transform: rotateZ(30deg);
+}
+
+.main .pizzas .cart {
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  fill: white;
 }
 
 .main .pizza-header {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   font-size: 2em;
   color: gray;
   font-family: "Roboto", sans-serif;
-}
-
-@-webkit-keyframes roll-in {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate(20%) rotate(20deg);
-            transform: translate(20%) rotate(20deg);
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes roll-in {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate(20%) rotate(20deg);
-            transform: translate(20%) rotate(20deg);
-  }
-  100% {
-    opacity: 1;
-  }
 }
 /*# sourceMappingURL=main.css.map */
