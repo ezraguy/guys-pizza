@@ -22,34 +22,40 @@
       box-shadow: 0 0 5px;
       text-align: center;
       height: 200px;
-      width: 400px;
       position: relative;
       display: block;
 
       .card-text {
-        width: 230px;
-        position: absolute;
-        margin-top: 15%;
+        width: 160px;
+        position: relative;
+        float: left;
         text-align: left;
-        right: 0px;
+        margin-top: 10%;
+        font-size: 13pt;
         display: block;
+        margin-left: 5px;
         margin-bottom: 5%;
+        word-break: break-word;
       }
+
       .card-title {
-        font-family: "Roboto";
-        float: right;
-        margin-right: 10px;
-        font-size: 2em;
-      }
-      img {
+        top: 0;
+        left: 0;
         position: absolute;
-        left: -35px !important;
-        top: 0px;
-        height: stretch;
-        width: 230px;
+        font-family: "Roboto";
+        font-size: 1.5em;
+        margin: 5px;
+      }
+
+      .main-pizza {
+        position: fixed;
+        top: 0;
+        right: 0px;
+        height: 100%;
+        width: 60%;
         margin: 0px;
         padding: 0;
-        transition: 0.3s ease;
+        transition: 0.3s ease-in-out;
 
         &:hover {
           transform: scale(1.2);
@@ -61,19 +67,26 @@
       transition: 0.2s ease;
       position: absolute;
       bottom: 0px;
-      right: 0px;
+      left: 0px;
       margin: 10px;
+      background-color: rgb(227, 83, 83);
+      border: none;
 
       &:hover {
         transform: translateY(-10px);
-        .cart {
+        .cartIcon {
           transform: rotateZ(30deg);
         }
       }
     }
-    .cart {
+    .cartIcon {
       transition: 0.2s ease;
       fill: white;
+    }
+    .price {
+      position: sticky;
+      float: right;
+      font-size: 16pt;
     }
   }
 
@@ -85,25 +98,6 @@
   }
 }
 
-@media (max-width: 1630px) {
-  .pizza-card {
-    flex: 0 0 30% !important;
-    max-width: 30% !important;
-  }
-}
-@media (max-width: 1365px) {
-  .pizza-card {
-    flex: 0 0 50% !important;
-    max-width: 50% !important;
-  }
-}
-
-@media (max-width: 836px) {
-  .pizza-card {
-    flex: 0 0 100% !important;
-    max-width: 100% !important;
-  }
-}
 // disabling animation delay on mobile
 @media screen and (max-width: 1000px) {
   [data-aos-delay] {
