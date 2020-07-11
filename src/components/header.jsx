@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/header.css";
+import "../scss/header.scss";
 const Header = () => {
   return (
     <div className="container-fluid m-0 p-0">

@@ -3,24 +3,29 @@ import './App.css';
 import Header from './components/header';
 import Main from './components/main';
 import Overlay from './components/overlay';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+
 
 class App extends Component {
-  state = { isloaded: false }
+  constructor(props) {
+    super(props)
+    Aos.init();
+  }
 
-  // componentDidMount = () => {
-  //   let { isloaded } = this.state;
-  //   isloaded = true;
-  //   this.setState({ isloaded })
-  // }
+
   render() {
     return (
       <div className="App" >
-        <Overlay />
+        {/* <Overlay /> */}
         <Header />
         <Main />
       </div>
     )
-  };
-}
+  }
+
+
+};
+
 
 export default App;

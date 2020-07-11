@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../css/overlay.css";
+import "../scss/overlay.scss";
 import pizzaLoader from "../images/pizzaLoader.png";
 
 class overlay extends Component {
