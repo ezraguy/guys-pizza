@@ -67,10 +67,10 @@
       transition: 0.2s ease;
       position: absolute;
       bottom: 0px;
+      color: white;
       left: 0px;
       margin: 10px;
       background-color: rgb(227, 83, 83);
-      border: none;
 
       &:hover {
         transform: translateY(-10px);
@@ -87,6 +87,7 @@
       position: sticky;
       float: right;
       font-size: 16pt;
+      font-weight: bold;
     }
   }
 

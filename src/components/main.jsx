@@ -7,14 +7,13 @@ import PepPizza from "../images/pep-pizza.png";
 import pizzavid from "../videos/pizzaVid.mp4";
 import { ReactComponent as CartSvg } from "../svg/cart.svg";
 import BuildModal from "./build-pizza";
-import buildModal from "./build-pizza";
 
 class Main extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      showModal: false,
+      showModal: true,
       pizza: [
         {
           id: 1,
@@ -28,7 +27,7 @@ class Main extends Component {
         {
           id: 2,
           name: "Uncle john",
-          price: "15$",
+          price: "19$",
           src: pizza1,
           desc: "black olives, mushrooms and red bell peppers",
           className: "main-pizza",
@@ -37,7 +36,7 @@ class Main extends Component {
         {
           id: 3,
           name: "Mr.Toppings",
-          price: "25$",
+          price: "30$",
           src: ExtraTopings,
           desc: "Bacon,halapenjo, mushrooms ,olivs and pepronnie",
           className: "main-pizza ",
@@ -46,7 +45,7 @@ class Main extends Component {
         {
           id: 4,
           name: "1 more slice",
-          price: "15$",
+          price: "20$",
           src: PepPizza,
           desc: "halapenjo, pepronnie with pomodoro cheese",
           className: "main-pizza",
@@ -57,19 +56,20 @@ class Main extends Component {
   }
 
   handleClick = (id) => {
-    console.log(id);
     if (id === 1) {
       this.setState({ showModal: true });
     }
   };
-  showModal = () => {};
+
+  closeModal = () => {
+    this.setState({ showModal: false });
+  };
 
   render() {
-    const { pizza } = this.state;
-
+    const { pizza, showModal } = this.state;
     return (
       <div className="container-fluid p-0 main">
-        {/* <div>{this.state.showModal && <BuildModal />}</div> */}
+        {showModal && <BuildModal closeModal={this.closeModal} />}
         <div className=" p-0">
           <video
             muted={true}
@@ -107,7 +107,7 @@ class Main extends Component {
                       <button
                         onClick={() => this.handleClick(pizza.id)}
                         href="#a"
-                        className="btn btn-primary addToCart"
+                        className="btn  addToCart"
                       >
                         Add to cart <CartSvg className="cartIcon" />
                       </button>
