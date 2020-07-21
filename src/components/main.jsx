@@ -13,7 +13,7 @@ class Main extends Component {
     super(props);
 
     this.state = {
-      showModal: true,
+      showModal: false,
       pizza: [
         {
           id: 1,
@@ -52,12 +52,16 @@ class Main extends Component {
           aosAnimationDelay: 400,
         },
       ],
+      cartItems: [],
     };
   }
 
-  handleClick = (id) => {
+  handleClick = (id, pizza) => {
+    let cartItems = [...this.state.cartItems];
     if (id === 1) {
       this.setState({ showModal: true });
+    } else {
+      cartItems.push(pizza);
     }
   };
 
@@ -105,7 +109,7 @@ class Main extends Component {
                       <p className="card-text">{pizza.desc}</p>
 
                       <button
-                        onClick={() => this.handleClick(pizza.id)}
+                        onClick={() => this.handleClick(pizza.id, pizza)}
                         href="#a"
                         className="btn  addToCart"
                       >

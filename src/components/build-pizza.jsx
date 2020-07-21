@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Olives from "../images/olives.png";
-import Jalapeno from "../images/jalapeno.png";
+import Bacon from "../images/bacon.png";
+import Mush from "../images/mush.png";
+import Pep from "../images/pep.png";
 import _ from "lodash";
 import "../scss/modal.scss";
 import "animate.css";
@@ -13,10 +15,9 @@ class buildModal extends Component {
       showTopping: false,
       toppings: [
         { id: 1, name: "Olives", src: Olives },
-        { id: 2, name: "jalapeno", src: Jalapeno },
-        { id: 3, name: "mushrooms" },
-        { id: 4, name: "bacon" },
-        { id: 5, name: "cheese" },
+        { id: 2, name: "mushrooms", src: Mush },
+        { id: 3, name: "bacon", src: Bacon },
+        { id: 4, name: "pepperoni", src: Pep },
       ],
     };
   }
@@ -26,9 +27,7 @@ class buildModal extends Component {
     let topping = _.find(this.state.toppings, (o) => {
       return o.name === name;
     });
-
     toppingsArr.push(topping);
-
     this.setState({ showTopping: true, toppingsArr });
   };
 
