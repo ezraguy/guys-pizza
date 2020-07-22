@@ -30,14 +30,13 @@ class Cart extends Component {
             <div className="row">
               {this.props.pizzasInCart.map((pizza, index) => {
                 return (
-                  <div
-                    key={index}
-                    className="cart-item"
-                    onClick={() => this.handleDelete(index)}
-                  >
+                  <div key={index} className="cart-item">
                     <span>{pizza.name}</span>
                     <span className="price">{pizza.price}$</span>
-                    <Xsvg className="x-icon" />
+                    <Xsvg
+                      className="x-icon"
+                      onClick={() => this.handleDelete(index)}
+                    />
                     <hr />
                   </div>
                 );

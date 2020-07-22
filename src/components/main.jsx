@@ -59,7 +59,6 @@ class Main extends Component {
   }
 
   handleClick = (id, pizza) => {
-    let cartItems = [...this.state.cartItems];
     let total = this.state.total;
     if (id === 1) {
       this.setState({ showModal: true });
