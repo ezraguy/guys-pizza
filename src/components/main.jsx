@@ -7,18 +7,20 @@ import PepPizza from "../images/pep-pizza.png";
 import pizzavid from "../videos/pizzaVid.mp4";
 import { ReactComponent as CartSvg } from "../svg/cart.svg";
 import BuildModal from "./build-pizza";
+import { connect } from "react-redux";
 
 class Main extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      total: 0,
       showModal: false,
       pizza: [
         {
           id: 1,
           name: "Make your own!",
-          price: "15$",
+          price: 15,
           src: MarPizza,
           desc: " build a master piece",
           className: "main-pizza ",
@@ -27,7 +29,7 @@ class Main extends Component {
         {
           id: 2,
           name: "Uncle john",
-          price: "19$",
+          price: 19,
           src: pizza1,
           desc: "black olives, mushrooms and red bell peppers",
           className: "main-pizza",
@@ -36,7 +38,7 @@ class Main extends Component {
         {
           id: 3,
           name: "Mr.Toppings",
-          price: "30$",
+          price: 30,
           src: ExtraTopings,
           desc: "Bacon,halapenjo, mushrooms ,olivs and pepronnie",
           className: "main-pizza ",
@@ -45,7 +47,7 @@ class Main extends Component {
         {
           id: 4,
           name: "1 more slice",
-          price: "20$",
+          price: 20,
           src: PepPizza,
           desc: "halapenjo, pepronnie with pomodoro cheese",
           className: "main-pizza",
@@ -58,10 +60,12 @@ class Main extends Component {
 
   handleClick = (id, pizza) => {
     let cartItems = [...this.state.cartItems];
+    let total = this.state.total;
     if (id === 1) {
       this.setState({ showModal: true });
     } else {
-      cartItems.push(pizza);
+      this.setState({ total: total + pizza.price });
+      this.props.addPizzaToCart(pizza, this.state.total);
     }
   };
 
@@ -110,12 +114,11 @@ class Main extends Component {
 
                       <button
                         onClick={() => this.handleClick(pizza.id, pizza)}
-                        href="#a"
                         className="btn  addToCart"
                       >
                         Add to cart <CartSvg className="cartIcon" />
                       </button>
-                      <span className="price">{pizza.price}</span>
+                      <span className="price">{pizza.price}$</span>
                     </div>
                   </div>
                 </div>
@@ -128,4 +131,12 @@ class Main extends Component {
   }
 }
 
-export default Main;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addPizzaToCart: (pizza, total) => {
+      dispatch({ type: "ADD_PIZZA", pizza: pizza, total: total });
+    },
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Main);

@@ -1,15 +1,53 @@
 import React, { Component } from "react";
 import "../scss/cart.scss";
-class Cart extends Component {
-  constructor(props) {
-    super(props);
-  }
-  state = {};
+import { connect } from "react-redux";
 
+class Cart extends Component {
+  state = {
+    total: 0,
+  };
+
+  componentDidUpdate = (prevProps) => {
+    if (this.props.pizzasInCart !== prevProps.pizzasInCart) {
+      let total = 0;
+      for (let i = 0; i < this.props.pizzasInCart.length; i++) {
+        total += Number(this.props.pizzasInCart[i].price);
+      }
+      this.setState({ total });
+    }
+  };
   render() {
     const isopen = this.props.isopen;
-    return <div>{isopen && <div className="cart">Im the CArt</div>}</div>;
+    return (
+      <>
+        {isopen && (
+          <div className="cart">
+            <div className="row">
+              {this.props.pizzasInCart.map((pizza, index) => {
+                return (
+                  <div key={index} className="cart-item">
+                    <span>{pizza.name}</span>
+                    <span className="price">{pizza.price}$</span>
+                    <hr />
+                  </div>
+                );
+              })}
+              {this.props.pizzasInCart.length > 0 && (
+                <p className="total">Total:{this.state.total}$</p>
+              )}
+              {this.props.pizzasInCart.length === 0 && (
+                <p className="ml-4">There is nothing here!</p>
+              )}
+            </div>
+          </div>
+        )}
+      </>
+    );
   }
 }
-
-export default Cart;
+const mapStateToProps = (state) => {
+  return {
+    pizzasInCart: state.pizzasInCart,
+  };
+};
+export default connect(mapStateToProps)(Cart);

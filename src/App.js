@@ -13,7 +13,7 @@ class App extends Component {
   }
   state = {
     isCartOpen: false,
-    cartitems: []
+
   }
 
   openCart = () => {
@@ -25,9 +25,9 @@ class App extends Component {
     return (
       <div className="App" >
         {/* <Overlay /> */}
+        <Cart isopen={this.state.isCartOpen} />
         <Header openCart={this.openCart} />
         <Main />
-        <Cart isopen={this.state.isCartOpen} />
       </div>
     )
   }
