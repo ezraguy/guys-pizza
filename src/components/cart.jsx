@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../scss/cart.scss";
 import { connect } from "react-redux";
+import { ReactComponent as Xsvg } from "../svg/x.svg";
 
 class Cart extends Component {
   state = {
@@ -16,6 +17,10 @@ class Cart extends Component {
       this.setState({ total });
     }
   };
+
+  handleDelete = (index) => {
+    this.props.removePizza(index);
+  };
   render() {
     const isopen = this.props.isopen;
     return (
@@ -25,9 +30,14 @@ class Cart extends Component {
             <div className="row">
               {this.props.pizzasInCart.map((pizza, index) => {
                 return (
-                  <div key={index} className="cart-item">
+                  <div
+                    key={index}
+                    className="cart-item"
+                    onClick={() => this.handleDelete(index)}
+                  >
                     <span>{pizza.name}</span>
                     <span className="price">{pizza.price}$</span>
+                    <Xsvg className="x-icon" />
                     <hr />
                   </div>
                 );
@@ -50,4 +60,12 @@ const mapStateToProps = (state) => {
     pizzasInCart: state.pizzasInCart,
   };
 };
-export default connect(mapStateToProps)(Cart);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    removePizza: (index) => {
+      dispatch({ type: "REMOVE_PIZZA", index: index });
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);
