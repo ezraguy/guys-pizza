@@ -7,7 +7,6 @@
   top: 4%;
   z-index: 100;
   border-radius: 10px;
-
   overflow-y: auto;
   overflow-x: hidden;
   .cart-item {
@@ -18,8 +17,7 @@
     text-align: left;
 
     .price {
-      margin-right: 5%;
-      float: right;
+      margin-left: 1%;
     }
   }
 
@@ -29,7 +27,17 @@
   }
 
   .x-icon {
-    margin-left: 5px;
     cursor: pointer;
+    float: right;
+    margin-right: 5%;
+    margin-top: 1%;
+  }
+
+  .toppings {
+    position: absolute;
+    top: 45%;
+    left: 2px;
+    font-size: 10pt;
+    color: gray;
   }
 }

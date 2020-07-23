@@ -33,6 +33,11 @@ class Cart extends Component {
                   <div key={index} className="cart-item">
                     <span>{pizza.name}</span>
                     <span className="price">{pizza.price}$</span>
+                    {pizza.toppings && (
+                      <span className=" text-muted toppings">
+                        {pizza.toppings}
+                      </span>
+                    )}
                     <Xsvg
                       className="x-icon"
                       onClick={() => this.handleDelete(index)}

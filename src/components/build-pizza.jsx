@@ -6,7 +6,10 @@ import Pep from "../images/pep.png";
 import _ from "lodash";
 import "../scss/modal.scss";
 import "animate.css";
+import { ReactComponent as CartSvg } from "../svg/cart.svg";
 import MarPizza from "../images/mar-pizza.png";
+import { connect } from "react-redux";
+
 class buildModal extends Component {
   constructor(props) {
     super(props);
@@ -15,9 +18,9 @@ class buildModal extends Component {
       showTopping: false,
       toppings: [
         { id: 1, name: "Olives", src: Olives },
-        { id: 2, name: "mushrooms", src: Mush },
-        { id: 3, name: "bacon", src: Bacon },
-        { id: 4, name: "pepperoni", src: Pep },
+        { id: 2, name: "Mushrooms", src: Mush },
+        { id: 3, name: "Bacon", src: Bacon },
+        { id: 4, name: "Pepperoni", src: Pep },
       ],
     };
   }
@@ -29,6 +32,23 @@ class buildModal extends Component {
     });
     toppingsArr.push(topping);
     this.setState({ showTopping: true, toppingsArr });
+  };
+
+  handleClick = () => {
+    const toppingsArr = [...this.state.toppingsArr];
+    let toppings = " ";
+    for (let i = 0; i < toppingsArr.length; i++) {
+      toppings += toppingsArr[i].name + " ";
+    }
+    // toppings = toppings.split("");
+
+    const customPizza = {
+      id: 1,
+      name: "Make it your own",
+      toppings: [toppings],
+      price: 35,
+    };
+    this.props.addPizzaToCart(customPizza);
   };
 
   render() {
@@ -67,15 +87,20 @@ class buildModal extends Component {
 
             <img className="pizza-img" src={MarPizza} alt="" />
           </div>
-          <div className="pizza-size">
-            <button>S</button>
-            <button>M</button>
-            <button>L</button>
-          </div>
+          <button onClick={() => this.handleClick()} className="btn addToCart">
+            Add to cart <CartSvg className="cartIcon" />
+          </button>
         </div>
       </div>
     );
   }
 }
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addPizzaToCart: (customPizza) => {
+      dispatch({ type: "ADD_PIZZA", pizza: customPizza });
+    },
+  };
+};
 
-export default buildModal;
+export default connect(null, mapDispatchToProps)(buildModal);

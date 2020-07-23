@@ -20,7 +20,7 @@ class Main extends Component {
         {
           id: 1,
           name: "Make your own!",
-          price: 15,
+          price: 35,
           src: MarPizza,
           desc: " build a master piece",
           className: "main-pizza ",
@@ -40,7 +40,7 @@ class Main extends Component {
           name: "Mr.Toppings",
           price: 30,
           src: ExtraTopings,
-          desc: "Bacon,halapenjo, mushrooms ,olivs and pepronnie",
+          desc: "Bacon,halapenjo,mushrooms ,olivs and pepronnie",
           className: "main-pizza ",
           aosAnimationDelay: 300,
         },

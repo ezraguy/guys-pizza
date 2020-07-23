@@ -46,21 +46,6 @@
     }
   }
 
-  .pizza-size {
-    button {
-      border-radius: 15px;
-      width: 30px;
-      margin-left: 10px;
-      background-color: transparent;
-      border: 1px solid;
-      transition: 0.4s ease;
-      &:hover {
-        color: white;
-        background-color: #e35353;
-      }
-    }
-  }
-
   .toppings {
     padding-top: 60px;
     width: 20%;
@@ -81,5 +66,22 @@
         color: white;
       }
     }
+  }
+  .addToCart {
+    transition: 0.2s ease;
+    color: white !important;
+    margin: 10px;
+    background-color: rgb(227, 83, 83);
+
+    &:hover {
+      transform: translateY(-10px);
+      .cartIcon {
+        transform: rotateZ(30deg);
+      }
+    }
+  }
+  .cartIcon {
+    transition: 0.2s ease;
+    fill: white;
   }
 }
