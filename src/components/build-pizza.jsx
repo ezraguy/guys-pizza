@@ -22,7 +22,9 @@ class buildModal extends Component {
         { id: 3, name: "Bacon", src: Bacon },
         { id: 4, name: "Pepperoni", src: Pep },
       ],
+      toppingsCopy: [],
     };
+    this.state.toppingsCopy = [...this.state.toppings];
   }
 
   renderToppings = (name, id) => {
@@ -62,8 +64,11 @@ class buildModal extends Component {
 
   handleClear = () => {
     let toppingsArr = [...this.state.toppingsArr];
+    let toppings = [...this.state.toppings];
+
     toppingsArr = [];
-    this.setState({ toppingsArr });
+    toppings = [...this.state.toppingsCopy];
+    this.setState({ toppingsArr, toppings });
   };
 
   render() {
