@@ -62,7 +62,6 @@ class Main extends Component {
   handleClick = (id, pizza) => {
     let total = this.state.total;
     if (id === 1) {
-      this.setState({ showModal: true });
       this.props.handleModal(true);
     } else {
       this.props.addPizzaToCart(pizza, this.state.total);
@@ -73,7 +72,7 @@ class Main extends Component {
   };
 
   closeModal = () => {
-    this.setState({ showModal: false });
+    this.props.handleModal(false);
   };
 
   render() {
