@@ -1,5 +1,6 @@
 const initState = {
     pizzasInCart: [],
+    showModal: false
 
 }
 
@@ -18,6 +19,16 @@ const rootReducer = (state = initState, action) => {
         return {
             ...state,
             pizzasInCart: [...newPizzas]
+        }
+    }
+
+
+    if (action.type === 'HANDLE_MODAL') {
+        let showModal = state.showModal;
+        showModal = action.showModal;
+        return {
+            ...state,
+            showModal: showModal
         }
     }
     return state;

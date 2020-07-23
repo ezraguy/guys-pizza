@@ -9,6 +9,8 @@ import "animate.css";
 import { ReactComponent as CartSvg } from "../svg/cart.svg";
 import MarPizza from "../images/mar-pizza.png";
 import { connect } from "react-redux";
+import { toast } from "react-toastify";
+import { toastConfig } from "../config.json";
 
 class buildModal extends Component {
   constructor(props) {
@@ -60,12 +62,12 @@ class buildModal extends Component {
     };
     this.props.addPizzaToCart(customPizza);
     this.setState({ toppingsArr });
+    toast(" 🍕  was added to the cart ", toastConfig);
   };
 
   handleClear = () => {
     let toppingsArr = [...this.state.toppingsArr];
     let toppings = [...this.state.toppings];
-
     toppingsArr = [];
     toppings = [...this.state.toppingsCopy];
     this.setState({ toppingsArr, toppings });
@@ -118,6 +120,7 @@ class buildModal extends Component {
     );
   }
 }
+
 const mapDispatchToProps = (dispatch) => {
   return {
     addPizzaToCart: (customPizza) => {

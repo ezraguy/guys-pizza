@@ -8,6 +8,8 @@ import pizzavid from "../videos/pizzaVid.mp4";
 import { ReactComponent as CartSvg } from "../svg/cart.svg";
 import BuildModal from "./build-pizza";
 import { connect } from "react-redux";
+import { toast } from "react-toastify";
+import { toastConfig } from "../config.json";
 
 class Main extends Component {
   constructor(props) {
@@ -60,11 +62,15 @@ class Main extends Component {
 
   handleClick = (id, pizza) => {
     let total = this.state.total;
+    let showModal = this.state.showModal;
     if (id === 1) {
       this.setState({ showModal: true });
+      this.props.handleModal(true);
     } else {
-      this.setState({ total: total + pizza.price });
       this.props.addPizzaToCart(pizza, this.state.total);
+      this.setState({ total: total + pizza.price });
+
+      toast(" 🍕  was added to the cart ", toastConfig);
     }
   };
 
@@ -73,7 +79,8 @@ class Main extends Component {
   };
 
   render() {
-    const { pizza, showModal } = this.state;
+    const { pizza } = this.state;
+    const { showModal } = this.props;
     return (
       <div className="container-fluid p-0 main">
         {showModal && <BuildModal closeModal={this.closeModal} />}
@@ -130,12 +137,20 @@ class Main extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    showModal: state.showModal,
+  };
+};
 const mapDispatchToProps = (dispatch) => {
   return {
     addPizzaToCart: (pizza, total) => {
       dispatch({ type: "ADD_PIZZA", pizza: pizza, total: total });
     },
+    handleModal: (showModal) => {
+      dispatch({ type: "HANDLE_MODAL", showModal: showModal });
+    },
   };
 };
 
-export default connect(null, mapDispatchToProps)(Main);
+export default connect(mapStateToProps, mapDispatchToProps)(Main);
