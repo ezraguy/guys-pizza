@@ -94,7 +94,7 @@ class buildModal extends Component {
           <div onClick={this.props.closeModal} className="exitBtn">
             X
           </div>
-          <h3 className="display-4">Create your very own master piece!</h3>
+          <div className="modal-title">Create your very own master piece!</div>
           <div className="buildPizza">
             {this.state.toppingsArr.map((top) => {
               return (

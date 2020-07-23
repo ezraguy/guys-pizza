@@ -34,7 +34,7 @@
     align-items: center;
     justify-content: center;
     .pizza-img {
-      width: 80%;
+      width: 70%;
       pointer-events: none;
     }
     .toppingImg {
@@ -43,7 +43,7 @@
       position: absolute;
       display: inline-block;
       z-index: 10;
-      width: 70%;
+      width: 60%;
     }
   }
 
@@ -85,5 +85,8 @@
       transition: 0.2s ease;
       fill: white;
     }
+  }
+  .modal-title {
+    font-size: 30pt;
   }
 }
