@@ -25,7 +25,8 @@ class buildModal extends Component {
     };
   }
 
-  renderToppings = (name) => {
+  renderToppings = (name, id) => {
+    this.hideBtn(id);
     let toppingsArr = [...this.state.toppingsArr];
     let topping = _.find(this.state.toppings, (o) => {
       return o.name === name;
@@ -34,13 +35,20 @@ class buildModal extends Component {
     this.setState({ showTopping: true, toppingsArr });
   };
 
-  handleClick = () => {
+  hideBtn = (id) => {
+    let toppings = [...this.state.toppings];
+    toppings = _.filter(toppings, function (o) {
+      return o.id !== id;
+    });
+    this.setState({ toppings });
+  };
+
+  handleClick = (topping) => {
     const toppingsArr = [...this.state.toppingsArr];
     let toppings = " ";
     for (let i = 0; i < toppingsArr.length; i++) {
       toppings += toppingsArr[i].name + " ";
     }
-    // toppings = toppings.split("");
 
     const customPizza = {
       id: 1,
@@ -49,6 +57,13 @@ class buildModal extends Component {
       price: 35,
     };
     this.props.addPizzaToCart(customPizza);
+    this.setState({ toppingsArr });
+  };
+
+  handleClear = () => {
+    let toppingsArr = [...this.state.toppingsArr];
+    toppingsArr = [];
+    this.setState({ toppingsArr });
   };
 
   render() {
@@ -62,7 +77,7 @@ class buildModal extends Component {
                   key={topping.id}
                   className="toppingName"
                   value={topping.src}
-                  onClick={() => this.renderToppings(topping.name)}
+                  onClick={() => this.renderToppings(topping.name, topping.id)}
                 >
                   {topping.name}
                 </div>
@@ -87,8 +102,11 @@ class buildModal extends Component {
 
             <img className="pizza-img" src={MarPizza} alt="" />
           </div>
-          <button onClick={() => this.handleClick()} className="btn addToCart">
+          <button onClick={() => this.handleClick()} className="btn addToCart ">
             Add to cart <CartSvg className="cartIcon" />
+          </button>
+          <button onClick={this.handleClear} className="btn btn-secondary">
+            Clear pizza
           </button>
         </div>
       </div>
