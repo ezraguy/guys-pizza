@@ -17,7 +17,6 @@ class Main extends Component {
 
     this.state = {
       total: 0,
-      showModal: false,
       pizza: [
         {
           id: 1,
@@ -62,7 +61,6 @@ class Main extends Component {
 
   handleClick = (id, pizza) => {
     let total = this.state.total;
-    let showModal = this.state.showModal;
     if (id === 1) {
       this.setState({ showModal: true });
       this.props.handleModal(true);
