@@ -76,7 +76,6 @@
     background-color: rgb(227, 83, 83);
     height: 40px;
     &:hover {
-      transform: translateY(-10px);
       .cartIcon {
         transform: rotateZ(30deg);
       }

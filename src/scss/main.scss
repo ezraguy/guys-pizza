@@ -56,10 +56,6 @@
         margin: 0px;
         padding: 0;
         transition: 0.3s ease-in-out;
-
-        &:hover {
-          transform: scale(1.2);
-        }
       }
     }
 
@@ -73,7 +69,6 @@
       background-color: rgb(227, 83, 83);
 
       &:hover {
-        transform: translateY(-10px);
         .cartIcon {
           transform: rotateZ(30deg);
         }

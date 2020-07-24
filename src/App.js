@@ -5,6 +5,7 @@ import Main from './components/main';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import Cart from './components/cart'
+import Overlay from './components/overlay';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 class App extends Component {
@@ -26,7 +27,7 @@ class App extends Component {
     return (
       <div className="App" >
         <ToastContainer />
-        {/* <Overlay /> */}
+        <Overlay />
         <Cart isopen={this.state.isCartOpen} />
         <Header openCart={this.openCart} />
         <Main />
