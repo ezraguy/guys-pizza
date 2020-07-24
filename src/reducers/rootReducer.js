@@ -22,6 +22,15 @@ const rootReducer = (state = initState, action) => {
         }
     }
 
+    if (action.type === 'CLEAR_PIZZAS') {
+        let newPizzas = state.pizzasInCart;
+        newPizzas = []
+        return {
+            ...state,
+            pizzasInCart: [...newPizzas]
+        }
+    }
+
 
     if (action.type === 'HANDLE_MODAL') {
         let showModal = state.showModal;

@@ -1,29 +1,28 @@
 .cart {
-  width: 30%;
+  font-family: "Roboto";
+  width: 30% !important;
   height: 300px;
   background-color: white;
   position: fixed;
   right: 2%;
+  display: flex;
+  flex-direction: column;
   top: 4%;
   z-index: 100;
   border-radius: 10px;
   overflow-y: auto;
   overflow-x: hidden;
+
   .cart-item {
     position: relative;
     width: 100%;
-    margin-left: 5%;
+    height: 50px;
     font-size: 14pt;
     text-align: left;
 
     .price {
       margin-left: 1%;
     }
-  }
-
-  .total {
-    margin-left: 5%;
-    font-size: 20pt;
   }
 
   .x-icon {
@@ -39,5 +38,23 @@
     left: 2px;
     font-size: 10pt;
     color: gray;
+  }
+
+  .totalOrder {
+    height: auto;
+
+    .total {
+      font-size: 20pt;
+    }
+    .submit-order {
+      float: right;
+      height: 40px;
+      background-color: #e35353;
+      color: white;
+      transition: ease 0.5s;
+      &:hover {
+        color: white;
+      }
+    }
   }
 }

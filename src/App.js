@@ -27,7 +27,7 @@ class App extends Component {
     return (
       <div className="App" >
         <ToastContainer />
-        <Overlay />
+        {/* <Overlay /> */}
         <Cart isopen={this.state.isCartOpen} />
         <Header openCart={this.openCart} />
         <Main />
