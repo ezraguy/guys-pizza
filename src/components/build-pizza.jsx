@@ -29,6 +29,13 @@ class buildModal extends Component {
     this.state.toppingsCopy = [...this.state.toppings];
   }
 
+  componentDidMount = () => {
+    this.state.toppings.forEach((picture) => {
+      const img = new Image();
+      img.src = picture.src;
+    });
+  };
+
   renderToppings = (name, id) => {
     this.hideBtn(id);
     let toppingsArr = [...this.state.toppingsArr];
