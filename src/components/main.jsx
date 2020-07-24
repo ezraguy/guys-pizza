@@ -59,6 +59,14 @@ class Main extends Component {
     };
   }
 
+  componentDidMount = () => {
+    this.state.pizza.forEach((picture) => {
+      const img = new Image();
+      img.src = picture.src;
+      console.log(img.src);
+    });
+  };
+
   handleClick = (id, pizza) => {
     let total = this.state.total;
     if (id === 1) {
