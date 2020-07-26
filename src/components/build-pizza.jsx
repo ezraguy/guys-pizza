@@ -3,6 +3,7 @@ import Olives from "../images/olives.png";
 import Bacon from "../images/bacon.png";
 import Mush from "../images/mush.png";
 import Pep from "../images/pep.png";
+import { ReactComponent as Xsvg } from "../svg/x.svg";
 import _ from "lodash";
 import "../scss/modal.scss";
 import "animate.css";
@@ -83,13 +84,13 @@ class buildModal extends Component {
   render() {
     return (
       <div className="modal-wrap">
-        <div className="buildModal animate__fadeInDown">
-          <div className="toppings">
+        <div className="buildModal container animate__fadeInDown">
+          <div className="toppings row">
             {this.state.toppings.map((topping) => {
               return (
                 <div
                   key={topping.id}
-                  className="toppingName"
+                  className="toppingName col"
                   value={topping.src}
                   onClick={() => this.renderToppings(topping.name, topping.id)}
                 >
@@ -99,10 +100,10 @@ class buildModal extends Component {
             })}
           </div>
           <div onClick={this.props.closeModal} className="exitBtn">
-            X
+            <Xsvg />
           </div>
           <div className="modal-title">Create your very own master piece!</div>
-          <div className="buildPizza">
+          <div className="buildPizza container">
             {this.state.toppingsArr.map((top) => {
               return (
                 <img
@@ -116,12 +117,17 @@ class buildModal extends Component {
 
             <img className="pizza-img" src={MarPizza} alt="" />
           </div>
-          <button onClick={() => this.handleClick()} className="btn addToCart ">
-            Add to cart <CartSvg className="cartIcon" />
-          </button>
-          <button onClick={this.handleClear} className="btn btn-secondary">
-            Clear pizza
-          </button>
+          <div className="actions">
+            <button
+              onClick={() => this.handleClick()}
+              className="btn addToCart mr-2 "
+            >
+              Add to cart <CartSvg className="cartIcon" />
+            </button>
+            <button onClick={this.handleClear} className="btn btn-secondary">
+              Clear pizza
+            </button>
+          </div>
         </div>
       </div>
     );

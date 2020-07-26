@@ -33,8 +33,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    min-height: 300px;
     .pizza-img {
-      width: 70%;
+      width: 60%;
       pointer-events: none;
     }
     .toppingImg {
@@ -48,10 +49,9 @@
   }
 
   .toppings {
-    padding-top: 60px;
-    width: 20%;
-    height: 100%;
-    float: right;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 
     .toppingName {
       background-color: rgb(240, 238, 238);
@@ -69,23 +69,29 @@
       }
     }
   }
-  .addToCart {
-    transition: 0.2s ease;
-    color: white !important;
-    margin: 10px;
-    background-color: rgb(227, 83, 83);
-    height: 40px;
-    &:hover {
+
+  .actions {
+    display: flex;
+    justify-content: center;
+
+    .addToCart {
+      transition: 0.2s ease;
+      color: white !important;
+      background-color: rgb(227, 83, 83);
+      height: 40px;
+      &:hover {
+        .cartIcon {
+          transform: rotateZ(30deg);
+        }
+      }
       .cartIcon {
-        transform: rotateZ(30deg);
+        transition: 0.2s ease;
+        fill: white;
       }
     }
-    .cartIcon {
-      transition: 0.2s ease;
-      fill: white;
-    }
   }
+
   .modal-title {
-    font-size: 30pt;
+    font-size: 25pt;
   }
 }

@@ -10,6 +10,6 @@
   "swalConfig": {
     "icon": "success",
     "title": "We've got it!",
-    "text": "your pizza will arrive in 30 minutes or less"
+    "text": "your order will arrive in 30 minutes or less"
   }
 }

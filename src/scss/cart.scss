@@ -1,15 +1,19 @@
 .cart {
-  font-family: "Roboto";
-  width: 30% !important;
+  top: 5%;
+  left: 0;
+  right: 0;
+  max-width: 600px !important;
   height: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: "Roboto";
   background-color: white;
   position: fixed;
-  right: 2%;
-  display: flex;
+  display: inline-block;
+  animation-duration: 0.7s;
   flex-direction: column;
-  top: 4%;
   z-index: 100;
-  border-radius: 10px;
+  border-radius: 7px;
   overflow-y: auto;
   overflow-x: hidden;
 
@@ -19,17 +23,24 @@
     height: 50px;
     font-size: 14pt;
     text-align: left;
+    margin-top: 25px;
 
     .price {
       margin-left: 1%;
     }
   }
 
+  .remove-icon {
+    cursor: pointer;
+    float: left;
+    margin-right: 1%;
+  }
   .x-icon {
+    position: absolute;
+    right: 5px;
+    top: 5px;
     cursor: pointer;
     float: right;
-    margin-right: 5%;
-    margin-top: 1%;
   }
 
   .toppings {
@@ -41,9 +52,11 @@
   }
 
   .totalOrder {
+    position: relative;
     height: auto;
 
     .total {
+      float: left !important;
       font-size: 20pt;
     }
     .submit-order {

@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import "../scss/cart.scss";
 import { connect } from "react-redux";
 import { ReactComponent as Xsvg } from "../svg/x.svg";
+import { ReactComponent as RemoveSvg } from "../svg/remove.svg";
 import Swal from "sweetalert2";
 import { swalConfig } from "../config.json";
+import "animate.css";
 class Cart extends Component {
   state = {
     total: 0,
@@ -27,12 +29,17 @@ class Cart extends Component {
     Swal.fire(swalConfig);
     this.props.clearPizzas();
   };
+
+  closeCart = () => {
+    this.props.handleCart(false);
+  };
   render() {
-    const isopen = this.props.isopen;
+    const showCart = this.props.showCart;
     return (
       <>
-        {isopen && (
-          <div className="cart container">
+        {showCart && (
+          <div className="cart container animate__bounceInDown ">
+            <Xsvg className="x-icon" onClick={this.closeCart} />
             {this.props.pizzasInCart.map((pizza, index) => {
               return (
                 <div key={index} className="cart-item">
@@ -43,8 +50,8 @@ class Cart extends Component {
                       {pizza.toppings}
                     </span>
                   )}
-                  <Xsvg
-                    className="x-icon"
+                  <RemoveSvg
+                    className="remove-icon"
                     onClick={() => this.handleDelete(index)}
                   />
                   <hr />
@@ -52,7 +59,7 @@ class Cart extends Component {
               );
             })}
             {this.props.pizzasInCart.length > 0 && (
-              <div className="totalOrder">
+              <div className="totalOrder my-2">
                 <span className="total">Total:{this.state.total}$</span>
                 <button
                   className="btn  submit-order"
@@ -79,6 +86,7 @@ class Cart extends Component {
 const mapStateToProps = (state) => {
   return {
     pizzasInCart: state.pizzasInCart,
+    showCart: state.showCart,
   };
 };
 const mapDispatchToProps = (dispatch) => {
@@ -88,6 +96,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     clearPizzas: () => {
       dispatch({ type: "CLEAR_PIZZAS" });
+    },
+    handleCart: (showCart) => {
+      dispatch({ type: "HANDLE_CART", showCart: showCart });
     },
   };
 };

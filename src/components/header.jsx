@@ -5,7 +5,10 @@ import { connect } from "react-redux";
 import slice from "../images/pizzaSlice.png";
 import "animate.css";
 
-const Header = ({ openCart, pizzasInCart }) => {
+const Header = ({ pizzasInCart, handleCart }) => {
+  const openCart = () => {
+    handleCart(true);
+  };
   return (
     <div className="container-fluid m-0 p-0">
       <nav id="header" className="navbar navbar-default  ">
@@ -29,4 +32,13 @@ const mapStateToProps = (state) => {
     pizzasInCart: state.pizzasInCart,
   };
 };
-export default connect(mapStateToProps)(Header);
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handleCart: (showCart) => {
+      dispatch({ type: "HANDLE_CART", showCart: showCart });
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

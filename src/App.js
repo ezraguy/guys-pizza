@@ -13,14 +13,6 @@ class App extends Component {
     super(props)
     Aos.init();
   }
-  state = {
-    isCartOpen: false,
-
-  }
-
-  openCart = () => {
-    this.setState({ isCartOpen: !this.state.isCartOpen })
-  }
 
 
   render() {
@@ -28,8 +20,8 @@ class App extends Component {
       <div className="App" >
         <ToastContainer />
         <Overlay />
-        <Cart isopen={this.state.isCartOpen} />
-        <Header openCart={this.openCart} />
+        <Cart />
+        <Header />
         <Main />
       </div>
     )

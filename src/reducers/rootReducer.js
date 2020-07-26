@@ -1,6 +1,7 @@
 const initState = {
     pizzasInCart: [],
-    showModal: false
+    showModal: false,
+    showCart: false
 
 }
 
@@ -8,6 +9,7 @@ const rootReducer = (state = initState, action) => {
 
     if (action.type === 'ADD_PIZZA') {
         return {
+            ...state,
             pizzasInCart: [...state.pizzasInCart, action.pizza],
         }
     }
@@ -35,9 +37,20 @@ const rootReducer = (state = initState, action) => {
     if (action.type === 'HANDLE_MODAL') {
         let showModal = state.showModal;
         showModal = action.showModal;
+
         return {
             ...state,
             showModal: showModal
+        }
+    }
+
+    if (action.type === 'HANDLE_CART') {
+        let showCart = state.showCart;
+        showCart = action.showCart;
+
+        return {
+            ...state,
+            showCart: showCart
         }
     }
     return state;
