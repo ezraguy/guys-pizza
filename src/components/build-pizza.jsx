@@ -90,7 +90,7 @@ class buildModal extends Component {
               return (
                 <div
                   key={topping.id}
-                  className="toppingName col"
+                  className="toppingName "
                   value={topping.src}
                   onClick={() => this.renderToppings(topping.name, topping.id)}
                 >
@@ -117,7 +117,7 @@ class buildModal extends Component {
 
             <img className="pizza-img" src={MarPizza} alt="" />
           </div>
-          <div className="actions">
+          <div className="actions row">
             <button
               onClick={() => this.handleClick()}
               className="btn addToCart mr-2 "
