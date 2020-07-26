@@ -44,28 +44,27 @@
       position: absolute;
       display: inline-block;
       z-index: 10;
-      width: 60%;
+      width: 50%;
     }
   }
 
   .toppings {
-    justify-content: space-evenly;
+    justify-content: center;
+
     position: absolute;
     bottom: 0;
     width: 100%;
 
     .toppingName {
+      margin-right: 10px;
       background-color: rgb(240, 238, 238);
-      border-radius: 360px;
+      border-radius: 7px;
+      cursor: pointer;
+      color: black;
       padding: 7px;
       text-align: center;
       margin-bottom: 15px;
       transition: 0.4s ease;
-
-      &:hover {
-        background-color: #e35353;
-        color: white;
-      }
     }
   }
 
