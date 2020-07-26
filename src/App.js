@@ -8,6 +8,7 @@ import Cart from './components/cart'
 import Overlay from './components/overlay';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import AboutUs from './components/about-us';
 class App extends Component {
   constructor(props) {
     super(props)
@@ -23,6 +24,7 @@ class App extends Component {
         <Cart />
         <Header />
         <Main />
+        <AboutUs />
       </div>
     )
   }

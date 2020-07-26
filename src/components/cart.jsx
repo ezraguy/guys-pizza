@@ -66,8 +66,7 @@ class Cart extends Component {
                   onClick={this.handleOrder}
                 >
                   Submit Order
-                  <span role="img" className=" pizza-icon">
-                    {" "}
+                  <span role="img" className=" pizza-icon" aria-label="pizza">
                     🍕
                   </span>
                 </button>

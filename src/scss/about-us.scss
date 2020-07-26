@@ -1,0 +1,85 @@
+.fatherDiv {
+  width: 100%;
+  position: relative;
+  .mainRow {
+    background-color: #e35353;
+    margin: 0;
+  }
+  .newsLetterWrap {
+    color: white;
+    margin-bottom: 50px;
+
+    .newsLetter {
+      float: left;
+
+      .title {
+        font-size: 32pt;
+        word-break: keep-all;
+        letter-spacing: 2px;
+        font-family: "Patua One", cursive;
+      }
+      .subTitle {
+        font-size: 14pt;
+        letter-spacing: 1px;
+      }
+
+      .contact {
+        position: relative;
+
+        .emailInput {
+          height: 50px;
+          border-radius: 40px;
+          padding-left: 10px;
+          max-width: 100%;
+          &:focus {
+            box-shadow: none;
+          }
+        }
+        .sendEmail {
+          color: rgb(89, 88, 88);
+          border: none;
+          border-radius: 40px;
+          height: 50px;
+          width: 100px;
+          background-color: rgb(250, 250, 0);
+          position: absolute;
+          right: 0;
+          z-index: 3;
+          &:focus {
+            outline: none;
+            box-shadow: none;
+          }
+        }
+      }
+    }
+  }
+  .aboutUsWrap {
+    background-color: #262626;
+    color: rgb(252, 248, 248);
+    padding: 0;
+    .aboutUs {
+      margin-bottom: 100px;
+      .title {
+        margin: 0;
+        font-size: 30pt;
+        word-break: keep-all;
+        letter-spacing: 2px;
+        font-family: "Patua One", cursive;
+      }
+
+      .ourStory {
+        float: left;
+        max-width: 500px;
+        margin-bottom: 20px;
+        .text {
+          text-align: left;
+        }
+      }
+      svg {
+        display: inline;
+        margin: 5px;
+        fill: white;
+      }
+    }
+  }
+}

@@ -10,8 +10,6 @@
   border-radius: 10px;
   box-shadow: 0 0 7px;
   margin-top: 50px;
-
-  height: 70vh;
   background-color: white;
   z-index: 10 !important;
 
@@ -29,7 +27,6 @@
   }
 
   .buildPizza {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -50,11 +47,8 @@
 
   .toppings {
     justify-content: center;
-
-    position: absolute;
-    bottom: 0;
     width: 100%;
-
+    padding-top: 10px;
     .toppingName {
       margin-right: 10px;
       background-color: rgb(240, 238, 238);
@@ -69,10 +63,8 @@
   }
 
   .actions {
-    margin-top: 5%;
-    display: flex;
     justify-content: center;
-    justify-self: last baseline;
+    margin-bottom: 10px;
     .addToCart {
       transition: 0.2s ease;
       color: white !important;
