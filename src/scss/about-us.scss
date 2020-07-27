@@ -1,21 +1,26 @@
 .fatherDiv {
   width: 100%;
   position: relative;
+  overflow-x: hidden;
   .mainRow {
-    background-color: #e35353;
     margin: 0;
-  }
-  .newsLetterWrap {
-    color: white;
-    margin-bottom: 50px;
+    min-height: 229px !important;
 
+    flex-grow: 1;
+  }
+
+  .newsLetterWrap {
+    background-color: #e35353;
+    color: white;
     .newsLetter {
       float: left;
+      margin-bottom: 20px;
 
       .title {
         font-size: 32pt;
         word-break: keep-all;
         letter-spacing: 2px;
+        margin-bottom: 0;
         font-family: "Patua One", cursive;
       }
       .subTitle {
@@ -25,7 +30,6 @@
 
       .contact {
         position: relative;
-
         .emailInput {
           height: 50px;
           border-radius: 40px;
@@ -58,7 +62,8 @@
     color: rgb(252, 248, 248);
     padding: 0;
     .aboutUs {
-      margin-bottom: 100px;
+      margin-bottom: 20px;
+
       .title {
         margin: 0;
         font-size: 30pt;

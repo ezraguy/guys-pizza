@@ -33,7 +33,7 @@ class NewsLetter extends Component {
         <div className="row mainRow">
           <div className="aboutUsWrap col-lg-6 col-12 ">
             <div className="aboutUs  ">
-              <div className="ourStory container ">
+              <div data-aos="fade-right" className="ourStory container ">
                 <p className="title">
                   Poy's Pizza
                   <span role="img" aria-label="pizza">
@@ -57,7 +57,7 @@ class NewsLetter extends Component {
             </div>
           </div>
           <div className="col-lg-6 col-12 newsLetterWrap ">
-            <div className="newsLetter ">
+            <div data-aos="fade-left" className="newsLetter ">
               <div>
                 <p className="title ">Never miss another sale!</p>
                 <p className="subTitle">
