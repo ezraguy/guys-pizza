@@ -35,14 +35,14 @@ class NewsLetter extends Component {
             <div className="aboutUs  ">
               <div data-aos="fade-right" className="ourStory container ">
                 <p className="title">
-                  Poy's Pizza
+                  Guy's Pizza
                   <span role="img" aria-label="pizza">
                     {" "}
                     🍕
                   </span>
                 </p>
                 <div className="text">
-                  Cmon who doesn't like pizza?? at Poy's pizza, we do it
+                  Cmon who doesn't like pizza?? at Guy's pizza, we do it
                   bestwith our secret family recipe and fresh ingredients. come
                   on down here at 123 Fake Street new york for a fresh slice
                   today!. 

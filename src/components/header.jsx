@@ -14,7 +14,7 @@ const Header = ({ pizzasInCart, handleCart }) => {
       <nav id="header" className="navbar navbar-default  ">
         <div className=" mx-auto order-0 content">
           <div className="navbar-brand mx-auto header-title">
-            Poy's Pizza
+            Guy's Pizza
             <img src={slice} className="findMe" alt="pizza slice" />
           </div>
         </div>
