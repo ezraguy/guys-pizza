@@ -6,6 +6,8 @@ import { ReactComponent as RemoveSvg } from "../svg/remove.svg";
 import Swal from "sweetalert2";
 import { swalConfig } from "../config.json";
 import "animate.css";
+import { removePizza, clearPizzas } from "../actions/pizzaActions";
+import { handleCart } from "../actions/cartActions";
 class Cart extends Component {
   state = {
     total: 0,
@@ -91,13 +93,13 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     removePizza: (index) => {
-      dispatch({ type: "REMOVE_PIZZA", index: index });
+      dispatch(removePizza(index));
     },
     clearPizzas: () => {
-      dispatch({ type: "CLEAR_PIZZAS" });
+      dispatch(clearPizzas());
     },
     handleCart: (showCart) => {
-      dispatch({ type: "HANDLE_CART", showCart: showCart });
+      dispatch(handleCart());
     },
   };
 };

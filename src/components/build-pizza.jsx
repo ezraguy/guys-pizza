@@ -12,7 +12,7 @@ import MarPizza from "../images/mar-pizza.png";
 import { connect } from "react-redux";
 import { toast } from "react-toastify";
 import { toastConfig } from "../config.json";
-
+import { addCustomPizza } from "../actions/pizzaActions";
 class buildModal extends Component {
   constructor(props) {
     super(props);
@@ -137,7 +137,7 @@ class buildModal extends Component {
 const mapDispatchToProps = (dispatch) => {
   return {
     addPizzaToCart: (customPizza) => {
-      dispatch({ type: "ADD_PIZZA", pizza: customPizza });
+      dispatch(addCustomPizza(customPizza));
     },
   };
 };

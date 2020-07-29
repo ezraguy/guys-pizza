@@ -10,6 +10,8 @@ import BuildModal from "./build-pizza";
 import { connect } from "react-redux";
 import { toast } from "react-toastify";
 import { toastConfig } from "../config.json";
+import { addPizza } from "../actions/pizzaActions";
+import { handleModal } from "../actions/modalActions";
 
 class Main extends Component {
   constructor(props) {
@@ -142,10 +144,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     addPizzaToCart: (pizza, total) => {
-      dispatch({ type: "ADD_PIZZA", pizza: pizza, total: total });
+      dispatch(addPizza(pizza, total));
     },
     handleModal: (showModal) => {
-      dispatch({ type: "HANDLE_MODAL", showModal: showModal });
+      dispatch(handleModal(showModal));
     },
   };
 };

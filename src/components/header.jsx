@@ -4,6 +4,7 @@ import { ReactComponent as CartSvg } from "../svg/cart.svg";
 import { connect } from "react-redux";
 import slice from "../images/pizzaSlice.png";
 import "animate.css";
+import { handleCart } from "../actions/cartActions";
 
 const Header = ({ pizzasInCart, handleCart }) => {
   const openCart = () => {
@@ -36,7 +37,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     handleCart: (showCart) => {
-      dispatch({ type: "HANDLE_CART", showCart: showCart });
+      dispatch(handleCart(showCart));
     },
   };
 };
