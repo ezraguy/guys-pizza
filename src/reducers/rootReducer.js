@@ -10,6 +10,7 @@ const rootReducer = (state = initState, action) => {
     if (action.type === 'ADD_PIZZA') {
         return {
             ...state,
+            showModal: false,
             pizzasInCart: [...state.pizzasInCart, action.pizza],
         }
     }
@@ -29,6 +30,7 @@ const rootReducer = (state = initState, action) => {
         newPizzas = []
         return {
             ...state,
+            showCart: false,
             pizzasInCart: [...newPizzas]
         }
     }
