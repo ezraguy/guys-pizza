@@ -5,7 +5,6 @@ import Main from './components/main';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import Cart from './components/cart'
-import Overlay from './components/overlay';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AboutUs from './components/about-us';
@@ -20,7 +19,6 @@ class App extends Component {
     return (
       <div className="App" >
         <ToastContainer />
-        <Overlay />
         <Cart />
         <Header />
         <Main />

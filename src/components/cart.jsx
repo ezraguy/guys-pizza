@@ -8,9 +8,11 @@ import { swalConfig } from "../config.json";
 import "animate.css";
 import { removePizza, clearPizzas } from "../actions/pizzaActions";
 import { handleCart } from "../actions/cartActions";
+import Overlay from "./overlay";
 class Cart extends Component {
   state = {
     total: 0,
+    showOverlay: false,
   };
 
   componentDidUpdate = (prevProps) => {
@@ -28,8 +30,12 @@ class Cart extends Component {
   };
 
   handleOrder = () => {
-    Swal.fire(swalConfig);
+    this.setState({ showOverlay: true });
     this.props.clearPizzas();
+    setTimeout(() => {
+      this.setState({ showOverlay: false });
+      Swal.fire(swalConfig);
+    }, 3500);
   };
 
   closeCart = () => {
@@ -79,6 +85,7 @@ class Cart extends Component {
             )}
           </div>
         )}
+        {this.state.showOverlay && <Overlay />}
       </>
     );
   }

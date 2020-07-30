@@ -87,7 +87,7 @@ class Main extends Component {
           <img src={pizzaHeader} className="pizzaSign" alt="pizza-sign" />
         </div>
         <div className="container pizza-header text-center">
-          <p>Order one of our amazing pizza's Today!</p>
+          <p>Try one of our amazing pizza's Today!</p>
         </div>
         <div className="pizzas container-fluid">
           <div className="row">

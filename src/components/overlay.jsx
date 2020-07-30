@@ -12,6 +12,8 @@ class overlay extends Component {
     return (
       <div className="overlay">
         <img src={pizzaLoader} alt="" />
+        <br />
+        <p className="overlay-message">Putting the pizza in the oven...</p>
       </div>
     );
   }
