@@ -77,7 +77,7 @@ class NewsLetter extends Component {
                         onClick={this.handleClick}
                         className="btn sendEmail"
                       >
-                        SEND
+                        SUBSCRIBE
                       </button>
                     </div>
                   </div>
