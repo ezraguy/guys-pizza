@@ -4,7 +4,7 @@ import pizza1 from "../images/pizza1.png";
 import MarPizza from "../images/mar-pizza.png";
 import ExtraTopings from "../images/extra-top-pizza.png";
 import PepPizza from "../images/pep-pizza.png";
-import pizzavid from "../videos/pizzaVid.mp4";
+import pizzaHeader from "../images/pizza-header.png";
 import { ReactComponent as CartSvg } from "../svg/cart.svg";
 import BuildModal from "./build-pizza";
 import { connect } from "react-redux";
@@ -83,15 +83,8 @@ class Main extends Component {
     return (
       <div className="container-fluid p-0 main">
         {showModal && <BuildModal closeModal={this.closeModal} />}
-        <div className=" p-0">
-          <video
-            muted={true}
-            loop
-            autoPlay
-            playsInline
-            src={pizzavid}
-            className="pizza-video"
-          ></video>
+        <div className="p-0 container-fluid">
+          <img src={pizzaHeader} className="pizzaSign" alt="pizza-sign" />
         </div>
         <div className="container pizza-header text-center">
           <p>Order one of our amazing pizza's Today!</p>
