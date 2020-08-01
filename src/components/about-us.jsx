@@ -61,7 +61,7 @@ class NewsLetter extends Component {
               <div>
                 <p className="title ">Never miss another sale!</p>
                 <p className="subTitle">
-                  Join our news letter and never miss out on promos and sales!
+                  Join our newsletter and never miss out on promos and sales!
                 </p>
                 <div className="contact ">
                   <div className="input-group">
