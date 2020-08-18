@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../scss/header.scss";
 import { ReactComponent as CartSvg } from "../svg/cart.svg";
 import { connect } from "react-redux";
@@ -7,6 +7,17 @@ import "animate.css";
 import { handleCart } from "../actions/cartActions";
 
 const Header = ({ pizzasInCart, handleCart }) => {
+
+  const [spanClass, setSpanClass] = useState('itemsInCart');
+  useEffect(() => {
+    if (pizzasInCart.length > 0) {
+      setSpanClass('itemsInCart animate__bounceInDown')
+    }
+    setTimeout(() => {
+      setSpanClass('itemsInCart')
+    }, 800);
+
+  }, [pizzasInCart])
   const openCart = () => {
     handleCart(true);
   };
@@ -20,7 +31,7 @@ const Header = ({ pizzasInCart, handleCart }) => {
           </div>
         </div>
         <CartSvg onClick={() => openCart()} className="cartSvg" />
-        <span className="itemsInCart animate__bounceInDown ">
+        <span className={spanClass}>
           {pizzasInCart.length}
         </span>
       </nav>

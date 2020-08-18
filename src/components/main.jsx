@@ -23,7 +23,7 @@ class Main extends Component {
         {
           id: 1,
           name: "Make your own!",
-          price: 35,
+          price: 20,
           src: MarPizza,
           desc: "build a master piece",
           className: "main-pizza ",
@@ -32,7 +32,7 @@ class Main extends Component {
         {
           id: 2,
           name: "Uncle john",
-          price: 19,
+          price: 15,
           src: pizza1,
           desc: "black olives, mushrooms and red  peppers",
           className: "main-pizza",
@@ -41,7 +41,7 @@ class Main extends Component {
         {
           id: 3,
           name: "Mr.Toppings",
-          price: 30,
+          price: 25,
           src: ExtraTopings,
           desc: "Bacon, halapenjo, mushrooms, olivs and pepronnie",
           className: "main-pizza ",
@@ -50,7 +50,7 @@ class Main extends Component {
         {
           id: 4,
           name: "1 more slice",
-          price: 20,
+          price: 17,
           src: PepPizza,
           desc: "halapenjo, pepronnie with pomodoro cheese",
           className: "main-pizza",
@@ -87,7 +87,7 @@ class Main extends Component {
           <img src={pizzaHeader} className="pizzaSign" alt="pizza-sign" />
         </div>
         <div className="container pizza-header text-center">
-          <p>Try one of our amazing pizza's Today!</p>
+          <p>Try one of our amazing pizza's today!</p>
         </div>
         <div className="pizzas container-fluid">
           <div className="row">
